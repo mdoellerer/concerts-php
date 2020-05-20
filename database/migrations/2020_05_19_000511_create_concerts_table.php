@@ -16,9 +16,6 @@ class CreateConcertsTable extends Migration
         Schema::create('concerts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->date('concert_date');
-            $table->integer('concert_type_id');
-            $table->integer('artist_id');
-            $table->integer('venue_id');
             $table->text('setlist')->nullable();
             $table->timestamps();
         });
