@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Concert extends Model
 {
-    //
+    protected $fillable = ['concert_date', 'setlist'];
 
     public function artists(){
         return $this->belongsTo('App\Artist');
