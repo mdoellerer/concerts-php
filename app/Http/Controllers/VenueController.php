@@ -15,7 +15,7 @@ class VenueController extends Controller
      */
     public function index()
     {
-        return VenueResource::collection(Venue::class);
+        return VenueResource::collection(Venue::all());
     }
 
     /**

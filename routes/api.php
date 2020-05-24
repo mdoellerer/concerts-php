@@ -19,5 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('artists', 'ArtistController');
 Route::apiResource('concerts', 'ConcertController');
-Route::apiResource('concertTypes', 'ConcerTypeController');
+Route::apiResource('concertTypes', 'ConcertTypeController');
 Route::apiResource('venues', 'VenueController');

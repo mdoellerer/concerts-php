@@ -15,7 +15,7 @@ class ConcertController extends Controller
      */
     public function index()
     {
-        return ConcertResource::collection(Concert::with('artists', 'venues'));
+        return ConcertResource::collection(Concert::all());
     }
 
     /**

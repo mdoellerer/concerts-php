@@ -15,7 +15,7 @@ class ConcertTypeController extends Controller
      */
     public function index()
     {
-        return ConcertTypeResource::collection(ConcertType::class);
+        return ConcertTypeResource::collection(ConcertType::all());
     }
 
     /**
