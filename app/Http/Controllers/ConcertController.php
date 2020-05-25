@@ -29,6 +29,9 @@ class ConcertController extends Controller
         $concert = Concert::create([
             'concert_date' => $request->concert_date,
             'setlist' => $request->setlist,
+            'concert_type_id' => $request->concert_type_id,
+            'artist_id' => $request->artist_id,
+            'venue_id' => $request->venue_id,
           ]);
     
           return new ConcertResource($concert);

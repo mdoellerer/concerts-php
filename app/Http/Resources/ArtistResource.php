@@ -18,6 +18,7 @@ class ArtistResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'country' => $this->country,
+            #'concert' => $this->concerts,
             'created_at' => (string) $this->created_at,
             'updated_at' => (string) $this->updated_at,
           ];

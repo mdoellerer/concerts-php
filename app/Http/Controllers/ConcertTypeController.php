@@ -26,7 +26,11 @@ class ConcertTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $concert_type = ConcertType::firstOrCreate([
+            'description' => $request->description,
+          ]);
+
+        return new ConcertTypeResource($concert_type);
     }
 
     /**

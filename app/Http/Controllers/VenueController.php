@@ -26,7 +26,7 @@ class VenueController extends Controller
      */
     public function store(Request $request)
     {
-        $venue = Venue::create([
+        $venue = Venue::firstOrCreate([
             'name' => $request->name,
             'city' => $request->city,
             'country' => $request->country,

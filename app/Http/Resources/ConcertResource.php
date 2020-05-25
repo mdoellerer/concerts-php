@@ -15,12 +15,12 @@ class ConcertResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'concert_id' => $this->concert_id,
+            'concert_id' => $this->id,
             'concert_date' => $this->concert_date,
             'setlist' => $this->setlist,
-            'artist' => $this->artist,
-            'concert_type' => $this->concertType,
-            'venue' => $this->venue,            
+            'artist' => $this->artists,
+            'concert_type' => $this->concertTypes,
+            'venue' => $this->venues,            
             'created_at' => (string) $this->created_at,
             'updated_at' => (string) $this->updated_at,
           ];

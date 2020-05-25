@@ -19,6 +19,7 @@ class VenueResource extends JsonResource
             'name' => $this->name,
             'city' => $this->city,
             'country' => $this->country,
+            #'concert' => $this->concerts,
             'created_at' => (string) $this->created_at,
             'updated_at' => (string) $this->updated_at,
           ];

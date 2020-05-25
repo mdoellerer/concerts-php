@@ -26,12 +26,12 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        $artist = Artist::create([
+        $artist = Artist::firstOrCreate([
             'name' => $request->name,
             'country' => $request->country,
           ]);
     
-          return new ArtistResource($artist);
+        return new ArtistResource($artist);
     }
 
     /**
@@ -54,9 +54,9 @@ class ArtistController extends Controller
      */
     public function update(Request $request, Artist $artist)
     {
-      $artist->update($request->only(['name', 'country']));
+        $artist->update($request->only(['name', 'country']));
 
-      return new ArtistResource($artist);
+        return new ArtistResource($artist);
     }
 
     /**

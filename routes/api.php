@@ -18,6 +18,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('artists', 'ArtistController');
+Route::put('artists/{artist}', 'ArtistController@update');
+Route::delete('artists/{artist}', 'ArtistController@destroy');
+
 Route::apiResource('concerts', 'ConcertController');
+Route::put('concerts/{concert}', 'ConcertController@update');
+Route::delete('concerts/{concert}', 'ConcertController@destroy');
+
 Route::apiResource('concertTypes', 'ConcertTypeController');
+
 Route::apiResource('venues', 'VenueController');
+Route::put('venues/{venue}', 'VenueController@update');
+Route::delete('venues/{venue}', 'VenueController@destroy');
