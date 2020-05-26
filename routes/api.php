@@ -30,3 +30,5 @@ Route::apiResource('concertTypes', 'ConcertTypeController');
 Route::apiResource('venues', 'VenueController');
 Route::put('venues/{venue}', 'VenueController@update');
 Route::delete('venues/{venue}', 'VenueController@destroy');
+
+Route::post('register', 'Auth\RegisterController@register');
