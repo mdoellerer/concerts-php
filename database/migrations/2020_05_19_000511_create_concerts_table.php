@@ -17,6 +17,9 @@ class CreateConcertsTable extends Migration
             $table->bigIncrements('id');
             $table->date('concert_date');
             $table->text('setlist')->nullable();
+            $table->integer('concert_type_id')->unsigned();
+            $table->biginteger('artist_id')->unsigned();
+            $table->biginteger('venue_id')->unsigned();
             $table->timestamps();
         });
     }

@@ -15,13 +15,8 @@ class UpdateConcertsTable extends Migration
     {
         Schema::table('concerts', function (Blueprint $table) {
             //
-            $table->integer('concert_type_id')->unsigned();
-            $table->foreign('concert_type_id')->references('id')->on('concert_types');
-            
-            $table->biginteger('artist_id')->unsigned();
-            $table->foreign('artist_id')->references('id')->on('artists');
-            
-            $table->biginteger('venue_id')->unsigned();
+            $table->foreign('concert_type_id')->references('id')->on('concert_types');            
+            $table->foreign('artist_id')->references('id')->on('artists');       
             $table->foreign('venue_id')->references('id')->on('venues');
         });
     }
