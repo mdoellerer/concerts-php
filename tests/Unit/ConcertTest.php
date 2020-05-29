@@ -92,10 +92,13 @@ class ConcertTest extends TestCase
             'setlist' => 'song1, song5, song3, song6', 
         ];
 
-        $response = $this->json('PUT', '/api/artists/' . $concert->id, $payload, $headers)
-            ->assertStatus(200);
-            #TODO
-            #->assertJson(['data' => ['concert_id' => 1, 'concert_date' => '2011-02-22', 'setlist' => 'song1, song5, song3, song6' ]]);
+        $response = $this->json('PUT', '/api/concerts/' . $concert->id, $payload, $headers)
+            ->assertStatus(200)
+            ->assertJsonFragment([
+                    'concert_id' => 1, 
+                    'concert_date' => '2011-02-22', 
+                    'setlist' => 'song1, song5, song3, song6',
+                ]);
     }
 
     public function testsConcertsAreDeletedCorrectly()
@@ -143,14 +146,17 @@ class ConcertTest extends TestCase
         $headers = ['Authorization' => "Bearer $token"];
 
         $response = $this->json('GET', '/api/concerts', [], $headers)
-            ->assertStatus(200);
-            // ->assertJson([
-            //     'data' => [
-            //         ['concert_id' => 1, 'concert_date' => '2011-02-22', 'setlist' => 'song1, song2, song3, song4' ],
-            //         ['concert_id' => 2, 'concert_date' => '2020-11-22', 'setlist' => 'song15, song4, song21, song1' ],
-            //     ]
-            
-            // ]);
+            ->assertStatus(200)
+            ->assertJsonFragment([
+                'concert_id' => 1, 
+                'concert_date' => '2018-07-07', 
+                'setlist' => 'song1, song2, song3, song4',
+            ])
+            ->assertJsonFragment([
+                'concert_id' => 2, 
+                'concert_date' => '2020-11-22', 
+                'setlist' => 'song15, song4, song21, song1',
+            ]);
     }
 
 
